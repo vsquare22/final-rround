@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide-14</title>
+    <style>
+        :root {
+            --color1:#f00;
+            --color2:#0cf;
+            --color3:#0fc;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            background: #292929;
+            height: 100vh;
+
+        }
+
+        ul {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 100px;
+            min-width: 600px;
+        }
+
+        li {
+            width: 20px;
+            background: var(--color2);
+            height: 20px;
+            border-radius: 50%;
+            animation: animate 4s ease-in forwards infinite;
+            cursor: pointer;
+            transition: .4s ease-in-out;
+            position: relative;
+        }
+
+        li:hover {
+            background-color: red;
+            color:var(--color1);
+        }
+
+        li::before {
+            position: absolute;
+            width: 40px;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            height: 40px;
+            animation: outer-radius 4s ease-in infinite forwards;
+            color:red;
+            content: '';
+            border-radius: 50px;
+            animation-delay:2s;
+        }
+        .list-3{
+            animation-delay:0ms;
+        }
+        .list-2{
+            animation-delay:400ms;
+        }
+        .list-1{
+            animation-delay:200ms;
+        }
+        .list-4{
+            animation-delay:600ms;
+        }
+        .list-5{
+            animation-delay:800ms;
+        }
+        .list-6{
+            animation-delay:1000ms;
+        }
+        .list-3::before{
+            animation-delay:0ms;
+        }
+        .list-2::before{
+            animation-delay:400ms;
+        }
+        .list-1::before{
+            animation-delay:200ms;
+        }
+        .list-4::before{
+            animation-delay:600ms;
+        }
+        .list-5::before{
+            animation-delay:800ms;
+        }
+        .list-6::before{
+            animation-delay:1000ms;
+        }
+
+        @keyframes animate {
+            0% {
+                box-shadow: 0 0 5px var(--color2);
+            }
+
+            50%{
+                box-shadow: 0 0 100px 10px var(--color3);
+            }
+
+            100% {
+                box-shadow: 0 0 40px 15px var(--color3);
+            }
+        }
+
+
+        @keyframes outer-radius {
+            0%{
+                border-radius: 50%;
+                border-color:transparent;
+                filter:blur(5x)
+            }
+
+            50%{
+                border-radius: 40%;
+                border-color: #0000;
+                width:60px;
+                height: 60px;
+            }
+
+            100%{
+                box-shadow: 0 0 100px 0px var(--color3);
+                border-radius: 50%;
+                border:2px var(--color3);
+                border:none;
+                width:100px;
+                height: 100px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="buttons">
+        <li class="list-1"></li>
+        <li class="list-2"></li>
+        <li class="list-3"></li>
+        <li class="list-4"></li>
+        <li class="list-5"></li>
+        <li class="list-6"></li>
+    </ul>
+</body>
+
+</html>
